@@ -14,7 +14,7 @@ public class RolePermission {
 
     private Long roleId; //角色主键
 
-    private Long permissionId;//权限主键
+    private Long permissionId; //权限主键
 
     public Long getId() {
         return id;

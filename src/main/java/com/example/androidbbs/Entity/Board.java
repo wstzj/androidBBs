@@ -10,13 +10,13 @@ public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;//主键
+    private Long id; //主键
 
-    private String board;//板块名称,英文
+    private String board; //板块名称,英文
 
-    private String boardName;//板块名称,中文
+    private String boardName; //板块名称,中文
 
-    private String description;//板块描述
+    private String description; //板块描述
 
     public Long getId() {
         return id;

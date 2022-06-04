@@ -12,7 +12,7 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; //主键
 
-    private String role; //角色名字,如"user","admin"等等
+    private String role; //角色名字,英文
 
     private String roleName; //角色名字,中文名称
 

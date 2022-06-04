@@ -1,20 +1,25 @@
 package com.example.androidbbs.Entity;
 
+import org.springframework.data.annotation.CreatedDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
-//用户角色表
-@Entity(name = "user_role")
-public class UserRole {
+@Entity(name = "topic_user")
+public class TopicUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;//主键
+    private Long id; //主键
+
+    private Long topicId; //话题主键
 
     private Long userId; //用户主键
 
-    private Long roleId; //角色主键
+    @CreatedDate
+    private Date createTime; //创建时间
 
     public Long getId() {
         return id;
@@ -22,6 +27,14 @@ public class UserRole {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getTopicId() {
+        return topicId;
+    }
+
+    public void setTopicId(Long topicId) {
+        this.topicId = topicId;
     }
 
     public Long getUserId() {
@@ -32,11 +45,11 @@ public class UserRole {
         this.userId = userId;
     }
 
-    public Long getRoleId() {
-        return roleId;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

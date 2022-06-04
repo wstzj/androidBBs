@@ -16,7 +16,7 @@ public class Category {
 
     private String categoryName; //分类名称,中文
 
-    private String description; //板块叙述
+    private String description; //板块描述
 
     public Long getId() {
         return id;

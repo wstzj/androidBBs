@@ -12,11 +12,11 @@ public class Permission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; //主键
 
-    private String permission; //权限,如“post a topic”,"post a reply"
+    private String permission; //权限名称,英文
 
     private String permissionName; //权限名称,中文名称
 
-    private String description; //权限描述;
+    private String description; //权限描述
 
     public Long getId() {
         return id;

@@ -15,7 +15,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // 主键id
+    private Long id; // 主键
 
     private String account; //用户账号
 

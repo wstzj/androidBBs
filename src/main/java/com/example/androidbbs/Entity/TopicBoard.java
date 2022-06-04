@@ -1,7 +1,6 @@
 package com.example.androidbbs.Entity;
 
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,21 +8,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
-public class Reply {
+@Entity(name = "topic_board")
+public class TopicBoard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; //主键
+    private Long id;
 
-    private String content; //回复内容
+    private Long topicId; //话题主键
 
-    private String image; //图片链接
+    private Long boardId; //板块主键
 
     @CreatedDate
     private Date createTime; //创建时间
-
-    @LastModifiedDate
-    private Date updateTime; //更新时间
 
     public Long getId() {
         return id;
@@ -33,20 +29,20 @@ public class Reply {
         this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public Long getTopicId() {
+        return topicId;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setTopicId(Long topicId) {
+        this.topicId = topicId;
     }
 
-    public String getImage() {
-        return image;
+    public Long getBoardId() {
+        return boardId;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setBoardId(Long boardId) {
+        this.boardId = boardId;
     }
 
     public Date getCreateTime() {
@@ -55,13 +51,5 @@ public class Reply {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
     }
 }

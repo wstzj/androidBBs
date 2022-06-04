@@ -13,19 +13,19 @@ import java.util.Date;
 public class Topic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;//主键
+    private Long id; //主键
 
-    private String title;//标题
+    private String title; //标题
 
-    private String content;//内容
+    private String content; //内容
 
-    private String image;//图片链接
+    private String image; //图片链接
 
     @CreatedDate
-    private Date createTime;//创建时间
+    private Date createTime; //创建时间
 
     @LastModifiedDate
-    private Date updateTime;//修改时间
+    private Date updateTime; //修改时间
 
     public Long getId() {
         return id;
