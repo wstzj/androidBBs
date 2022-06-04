@@ -36,6 +36,8 @@ import org.jboss.logging.Logger;
  * A helper class to keep the {@code XProperty}s of a class ordered by access type.
  *
  * @author Hardy Ferentschik
+ *
+ * 修改数据库建表顺序
  */
 class PropertyContainer {
 //
