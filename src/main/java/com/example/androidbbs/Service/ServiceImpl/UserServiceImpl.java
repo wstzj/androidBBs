@@ -23,12 +23,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseBody<User> getUserInfo(Long id) {
-        return null;
+        return ResponseBody.success(new User());
     }
 
     @Override
     public ResponseBody<String> deleteUser(Long id) {
-        return null;
+        return ResponseBody.success("成功删除");
     }
 
     @Override

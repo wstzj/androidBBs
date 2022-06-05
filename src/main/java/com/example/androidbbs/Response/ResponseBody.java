@@ -10,26 +10,32 @@ public class ResponseBody<T> extends ResponseEntity<Response<T>> {
         super(status);
     }
 
+    //返回体 初始化
     public ResponseBody(String code, String msg, T data) {
         super(Response.response(code, msg, data), Response.numToHttpStatus(code));
     }
 
+    //返回体 初始化
     public ResponseBody(String code, String msg) {
         super(Response.response(code, msg), Response.numToHttpStatus(code));
     }
 
+    //返回 200
     public static <T> ResponseBody<T> success(T data) {
         return new ResponseBody<>("200", "成功", data);
     }
 
+    //返回 失败
     public static <T> ResponseBody<T> failed(T data) {
         return new ResponseBody<>("422", "失败", data);
     }
 
+    //返回 自定义失败
     public static <T> ResponseBody<T> failMsg(String msg) {
         return new ResponseBody<>("422", msg);
     }
 
+    //返回 自定义返回
     public static <T> ResponseBody<T> responseBody(String code, String msg, T data) {
         return new ResponseBody<>(code, msg, data);
     }
@@ -59,6 +65,7 @@ class Response<T>{
         return new Response<>(status, message);
     }
 
+    //将数字转化成状态码
     public static HttpStatus numToHttpStatus(String code) {
         HttpStatus status = HttpStatus.NOT_FOUND;
         for (HttpStatus httpStatus : HttpStatus.values()) {
