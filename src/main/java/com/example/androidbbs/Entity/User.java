@@ -1,5 +1,6 @@
 package com.example.androidbbs.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -21,6 +22,7 @@ public class User {
 
     private String nickname; //用户昵称
 
+    @JsonIgnore
     private String password; //用户密码
 
     private String email; //用户邮箱
