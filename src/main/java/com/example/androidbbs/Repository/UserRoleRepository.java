@@ -34,4 +34,11 @@ public interface UserRoleRepository extends JpaRepository<UserRole, Long> {
      */
     boolean deleteUserRoleByUserIdAndRoleId(Long userId, Long roleId);
 
+    /**
+     * 查找User是否拥有Role
+     * userId:Long
+     * roleId:Long
+     */
+    boolean existsUserRoleByUserIdAndRoleId(Long userId, Long roleId);
+
 }

@@ -16,6 +16,13 @@ public class UserRole {
 
     private Long roleId; //角色主键
 
+    public UserRole(Long userId, Long roleId) {
+        this.userId = userId;
+        this.roleId = roleId;
+    }
+
+    public UserRole() {}
+
     public Long getId() {
         return id;
     }
