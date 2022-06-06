@@ -4,6 +4,8 @@ import com.example.androidbbs.Entity.User;
 import com.example.androidbbs.Response.ResponseBody;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface UserService {
 
@@ -18,5 +20,7 @@ public interface UserService {
 
     //更新User信息
     ResponseBody<User> updateUser(User user);
+
+    ResponseBody<List<User>> findAllUser();
 
 }
