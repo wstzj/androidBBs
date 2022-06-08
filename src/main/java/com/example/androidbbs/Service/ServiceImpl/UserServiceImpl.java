@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResponseBody<List<User>> findAllUser() {
+    public ResponseBody<List<User>> getAllUser() {
         try {
             List<User> userList = userRepository.findAll();
             if (userList.isEmpty()){

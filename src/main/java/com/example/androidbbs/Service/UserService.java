@@ -21,6 +21,8 @@ public interface UserService {
     //更新User信息
     ResponseBody<User> updateUser(User user);
 
-    ResponseBody<List<User>> findAllUser();
+    //查找用户列表
+    ResponseBody<List<User>> getAllUser();
+
 
 }
