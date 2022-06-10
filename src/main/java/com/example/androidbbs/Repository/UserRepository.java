@@ -16,8 +16,8 @@ public interface UserRepository extends JpaRepository<User,Long> {
     //通过Email查找User
     boolean existsUserByEmail(String email);
 
-    //通过Account和Password查找User
-    User findUserByAccountAndPassword(String account,String password);
+    //通过Account查找User
+    User findUserByAccount(String account);
 
     //通过Id查找User
     User findUserById(Long id);
