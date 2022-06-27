@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit;
 
 public class EmailUtil {
 
-    private final static String user = "tangzijie@hotmail.com"; // 发件人称号，同邮箱地址
-    private final static String password = "Wstzj123"; //
+    private final static String user = ""; // 发件人称号，同邮箱地址
+    private final static String password = ""; //
     private final static String port = "587";
 
     /**
