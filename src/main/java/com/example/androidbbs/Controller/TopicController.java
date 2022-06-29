@@ -22,16 +22,20 @@ public class TopicController {
 
     @GetMapping("topic/{topicId}")
     public ResponseBody<Topic> showTopic(@PathVariable("topicId") Long topicId){
-        return null;
+        return topicService.findTopicById(topicId);
     }
 
     @DeleteMapping("/topic/{topicId}")
     public  ResponseBody<String> deleteTopic(@PathVariable("topicId") Long topicId){
-        return null;
+        return topicService.deleteTopicById(topicId);
     }
 
-    @GetMapping("/board/{boardId}")
+    @GetMapping("/board/{boardId}/topic")
     public ResponseBody<List<Topic>> findTopicsByBoardId(@PathVariable("boardId") Long boardId){
-        return null;
+        return topicService.findTopicsByBoardId(boardId);
+    }
+    @GetMapping("/user/{userId}/topic")
+    public ResponseBody<List<Topic>> findTopicsByUserId(@PathVariable("userId") Long userId){
+        return topicService.findTopicsByUserId(userId);
     }
 }

@@ -2,6 +2,7 @@ package com.example.androidbbs.Service.ServiceImpl;
 
 import com.example.androidbbs.Entity.Topic;
 import com.example.androidbbs.Entity.TopicBoard;
+import com.example.androidbbs.Entity.TopicUser;
 import com.example.androidbbs.Repository.ReplyTopicRepository;
 import com.example.androidbbs.Repository.TopicBoardRepository;
 import com.example.androidbbs.Repository.TopicRepository;
@@ -34,6 +35,17 @@ public class TopicServiceImpl implements TopicService{
         List<TopicBoard> topicBoardList = topicBoardRepository.findTopicBoardsByBoardId(boardId);
         List<Topic> topicList = new ArrayList<>();
         for (TopicBoard item : topicBoardList) {
+            Topic topic = topicRepository.findTopicById(item.getTopicId());
+            topicList.add(topic);
+        }
+        return ResponseBody.success(topicList);
+    }
+
+    @Override
+    public ResponseBody<List<Topic>> findTopicsByUserId(Long userId) {
+        List<TopicUser> topicUserList = topicUserRepository.findTopicUsersByUserId(userId);
+        List<Topic> topicList = new ArrayList<>();
+        for (TopicUser item : topicUserList) {
             Topic topic = topicRepository.findTopicById(item.getTopicId());
             topicList.add(topic);
         }
