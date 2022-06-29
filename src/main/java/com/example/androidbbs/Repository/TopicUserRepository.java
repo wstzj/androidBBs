@@ -10,4 +10,5 @@ import java.util.List;
 public interface TopicUserRepository extends JpaRepository<TopicUser,Long> {
     List<TopicUser> findTopicUsersByUserId(Long userId);
     TopicUser findTopicUserByTopicId(Long topicId);
+    void deleteTopicUserByTopicId(Long topicId);
 }

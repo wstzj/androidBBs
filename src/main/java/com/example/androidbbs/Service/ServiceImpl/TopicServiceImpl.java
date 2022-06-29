@@ -2,8 +2,10 @@ package com.example.androidbbs.Service.ServiceImpl;
 
 import com.example.androidbbs.Entity.Topic;
 import com.example.androidbbs.Entity.TopicBoard;
+import com.example.androidbbs.Repository.ReplyTopicRepository;
 import com.example.androidbbs.Repository.TopicBoardRepository;
 import com.example.androidbbs.Repository.TopicRepository;
+import com.example.androidbbs.Repository.TopicUserRepository;
 import com.example.androidbbs.Response.ResponseBody;
 import com.example.androidbbs.Service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,12 @@ public class TopicServiceImpl implements TopicService{
 
     @Autowired
     TopicBoardRepository topicBoardRepository;
+
+    @Autowired
+    ReplyTopicRepository replyTopicRepository;
+
+    @Autowired
+    TopicUserRepository topicUserRepository;
 
     @Override
     public ResponseBody<List<Topic>> findTopicsByBoardId(Long boardId) {
@@ -48,8 +56,9 @@ public class TopicServiceImpl implements TopicService{
 
     @Override
     public ResponseBody<String> deleteTopicById(Long topicId) {
-        Topic topic = topicRepository.findTopicById(topicId);
-        topicRepository.delete(topic);
+        topicRepository.deleteTopicById(topicId);
+        replyTopicRepository.deleteReplyTopicsByTopicId(topicId);
+        topicUserRepository.deleteTopicUserByTopicId(topicId);
         return ResponseBody.success("成功删除");
     }
 }
