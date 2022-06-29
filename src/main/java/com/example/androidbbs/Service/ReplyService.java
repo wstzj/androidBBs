@@ -8,5 +8,5 @@ import java.util.List;
 
 @Service
 public interface ReplyService {
-    ResponseBody<List<Reply>> findReplyByTopic();
+    ResponseBody<List<Reply>> findReplyByTopicId(Long topicId);
 }
