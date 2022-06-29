@@ -8,25 +8,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Entity(name = "topic_board")
-public class TopicBoard {
+@Entity(name = "reply_user")
+public class ReplyUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; //主键
 
-    private Long topicId; //话题主键
+    private Long replyId; //回复主键
 
-    private Long boardId; //板块主键
+    private Long userId; //用户主键
 
     @CreatedDate
     private Date createTime; //创建时间
 
-    public TopicBoard(Long topicId, Long boardId) {
-        this.topicId = topicId;
-        this.boardId = boardId;
+    public ReplyUser(Long replyId, Long userId) {
+        this.replyId = replyId;
+        this.userId = userId;
     }
 
-    public TopicBoard() {
+    public ReplyUser() {
 
     }
 
@@ -38,20 +38,20 @@ public class TopicBoard {
         this.id = id;
     }
 
-    public Long getTopicId() {
-        return topicId;
+    public Long getReplyId() {
+        return replyId;
     }
 
-    public void setTopicId(Long topicId) {
-        this.topicId = topicId;
+    public void setReplyId(Long replyId) {
+        this.replyId = replyId;
     }
 
-    public Long getBoardId() {
-        return boardId;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setBoardId(Long boardId) {
-        this.boardId = boardId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Date getCreateTime() {

@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface BoardCategoryRepository extends JpaRepository<BoardCategory,Long> {
-    List<BoardCategory> findBoardCategoriesByBoardId(Long id);
+    List<BoardCategory> findBoardCategoriesByCategoryId(Long id);
 }
