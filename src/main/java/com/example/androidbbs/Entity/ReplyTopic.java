@@ -21,6 +21,15 @@ public class ReplyTopic {
     @CreatedDate
     private Date createTime; //创建时间
 
+    public ReplyTopic(Long replyId, Long topicId) {
+        this.replyId = replyId;
+        this.topicId = topicId;
+    }
+
+    public ReplyTopic() {
+
+    }
+
     public Long getId() {
         return id;
     }

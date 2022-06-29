@@ -10,4 +10,5 @@ import java.util.List;
 public interface ReplyUserRepository extends JpaRepository<ReplyUser,Long> {
     List<ReplyUser> findReplyUsersByUserId(Long userId);
     ReplyUser findReplyUserByReplyId(Long replyId);
+    boolean deleteReplyUserByReplyId(Long replyId);
 }

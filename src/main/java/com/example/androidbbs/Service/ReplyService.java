@@ -8,5 +8,9 @@ import java.util.List;
 
 @Service
 public interface ReplyService {
-    ResponseBody<List<Reply>> findReplyByTopicId(Long topicId);
+    ResponseBody<List<Reply>> findRepliesByTopicId(Long topicId);
+    ResponseBody<List<Reply>> findRepliesByUserId(Long userId);
+    ResponseBody<String> createReply(Reply reply,Long userId,Long topicId);
+    ResponseBody<String> updateReply(Reply reply,Long replyId);
+    ResponseBody<String> deleteReply(Long replyId);
 }
