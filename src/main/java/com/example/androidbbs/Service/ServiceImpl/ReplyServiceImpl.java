@@ -65,8 +65,10 @@ public class ReplyServiceImpl implements ReplyService {
 
     @Override
     public ResponseBody<String> deleteReply(Long replyId) {
+        replyRepository.deleteReplyById(replyId);
         replyUserRepository.deleteReplyUserByReplyId(replyId);
-        return null;
+        replyTopicRepository.deleteReplyTopicByReplyId(replyId);
+        return ResponseBody.success("成功删除");
     }
 
 }

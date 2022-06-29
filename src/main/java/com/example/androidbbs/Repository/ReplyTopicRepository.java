@@ -11,4 +11,5 @@ import java.util.List;
 public interface ReplyTopicRepository extends JpaRepository<ReplyTopic,Long> {
     List<ReplyTopic> findReplyTopicsByTopicId(Long topicId);
     ReplyTopic findReplyTopicByReplyId(Long replyId);
+    void deleteReplyTopicByReplyId(Long replyId);
 }

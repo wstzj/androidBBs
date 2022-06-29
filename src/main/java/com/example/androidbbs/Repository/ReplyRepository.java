@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ReplyRepository extends JpaRepository<Reply,Long> {
     Reply findReplyById(Long id);
+    void deleteReplyById(Long replyId);
 }
