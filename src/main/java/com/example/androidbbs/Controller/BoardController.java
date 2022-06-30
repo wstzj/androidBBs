@@ -1,6 +1,6 @@
 package com.example.androidbbs.Controller;
 
-import com.example.androidbbs.Entity.Topic;
+import com.example.androidbbs.Entity.Board;
 import com.example.androidbbs.Response.ResponseBody;
 import com.example.androidbbs.Service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +18,9 @@ public class BoardController {
     @Autowired
     BoardService boardService;
 
+    @GetMapping("/category/{categoryId}/board")
+    public ResponseBody<List<Board>> findTopicsByUserId(@PathVariable("categoryId") Long categoryId){
+        return boardService.findBoardsByCategoryId(categoryId);
+    }
 
 }
