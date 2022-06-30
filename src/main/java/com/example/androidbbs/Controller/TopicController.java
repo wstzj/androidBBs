@@ -16,7 +16,7 @@ public class TopicController {
     TopicService topicService;
 
     @PostMapping("/topic")
-    public ResponseBody<String> saveTopic(){
+    public ResponseBody<String> createTopic(){
         return null;
     }
 
